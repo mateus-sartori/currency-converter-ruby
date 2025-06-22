@@ -39,6 +39,9 @@ gem 'multi_xml'
 gem 'httparty'
 gem 'rswag'
 
+gem 'active_model_serializers'
+gem "enumerate_it"
+
 group :development, :test do
   gem 'rubocop'
   gem 'rspec-rails'
