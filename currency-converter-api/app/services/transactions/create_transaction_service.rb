@@ -37,6 +37,7 @@ class Transactions::CreateTransactionService < ApplicationService
       timestamp: Time.now.utc
     )
     transaction.save!
+    transaction
   rescue => e
     raise StandardError, "Erro ao criar transação: #{e.message}"
   end
