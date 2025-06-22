@@ -4,7 +4,7 @@ class CurrencyConverterService
   base_uri 'https://api.currencyapi.com/v3'
 
   def initialize
-    @api_key = ENV["CURRENCY_API_KEY"]
+    @api_key = ENV.fetch("CURRENCY_API_KEY")
   end
 
   def convert(from:, to:)
