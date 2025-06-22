@@ -7,7 +7,6 @@ class CreateTransactions < ActiveRecord::Migration[8.0]
       t.decimal :from_value
       t.decimal :to_value
       t.decimal :rate
-      t.datetime :timestamp
 
       t.timestamps
     end
