@@ -15,16 +15,20 @@ services:
   web:
     build:
       context: .
+    env_file: .env
     ports:
       - "3000:3000"
     volumes:
       - .:/rails
+    stdin_open: true
+    tty: true
     environment:
       RAILS_ENV: development
       DATABASE_URL: postgres://postgres:postgres@db:5432/currency_converter_api_development
+      BUNDLE_FRONZE: "false"
     depends_on:
       - db
-    command: bash -c "rm -f tmp/pids/server.pid && bin/dev"
+    command: bash -c "rm -f tmp/pids/server.pid && bin/dev -b '0.0.0.0'"
 
 volumes:
   postgres_data:
