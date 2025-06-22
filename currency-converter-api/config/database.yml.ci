@@ -1,0 +1,9 @@
+# config/database.yml.ci (usado no CI)
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: test
+  pool: 5
+  username: postgres
+  password: postgres
+  host: localhost
