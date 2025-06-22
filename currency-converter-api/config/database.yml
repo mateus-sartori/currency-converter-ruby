@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: <%= ENV.fetch("DATABASE_URL") { "postgres://postgres:postgres@db:5432/currency_converter_api_development" } %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: currency_converter_api_test
+
+production:
+  <<: *default
+  database: currency_converter_api_production

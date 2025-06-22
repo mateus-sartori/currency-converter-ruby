@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: currency_converter_api_development
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/rails
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: postgres://postgres:postgres@db:5432/currency_converter_api_development
+    depends_on:
+      - db
+    command: bash -c "rm -f tmp/pids/server.pid && bin/dev"
+
+volumes:
+  postgres_data:
