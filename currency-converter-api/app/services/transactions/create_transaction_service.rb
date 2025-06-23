@@ -34,11 +34,11 @@ class Transactions::CreateTransactionService < ApplicationService
       from_value: @from_value,
       to_value: to_value,
       rate: rate,
-      timestamp: Time.now.utc
     )
     transaction.save!
     transaction
   rescue => e
+    Rails.logger.error("Error creating transaction: #{e.message}")
     raise StandardError, transaction.errors.full_messages.join(', ')
   end
 end
