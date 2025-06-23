@@ -43,6 +43,10 @@ gem 'active_model_serializers'
 gem "enumerate_it"
 gem 'will_paginate'
 
+# Authenticate setup
+gem 'devise'
+gem 'devise-jwt'
+
 group :development, :test do
   gem 'rubocop'
   gem 'rspec-rails'
