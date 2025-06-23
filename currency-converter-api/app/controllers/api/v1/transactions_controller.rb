@@ -10,7 +10,11 @@ module Api
       end
 
       def index
-        @transactions = Transaction.where(user_id: params[:user_id])
+        @transactions = Transactions::IndexTransactionService.call(
+          params[:user_id],
+          page: params[:page] || 1,
+          per_page: params[:per_page] || 10
+        )
         render json: @transactions
       end
 

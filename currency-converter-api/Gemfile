@@ -41,6 +41,7 @@ gem 'rswag'
 
 gem 'active_model_serializers'
 gem "enumerate_it"
+gem 'will_paginate'
 
 group :development, :test do
   gem 'rubocop'
