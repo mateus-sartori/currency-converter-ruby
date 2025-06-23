@@ -1,0 +1,10 @@
+version: "3.0"
+services:
+  quasar:
+    build: .
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/home/node/app:rw
+    restart: "no"
+    command: /bin/sh -c "yarn && yarn dev --host 0.0.0.0"
