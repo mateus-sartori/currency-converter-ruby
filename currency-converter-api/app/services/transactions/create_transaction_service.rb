@@ -39,6 +39,6 @@ class Transactions::CreateTransactionService < ApplicationService
     transaction.save!
     transaction
   rescue => e
-    raise StandardError, "Erro ao criar transação: #{e.message}"
+    raise StandardError, transaction.errors.full_messages.join(', ')
   end
 end
