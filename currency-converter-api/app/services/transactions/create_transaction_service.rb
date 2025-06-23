@@ -19,7 +19,7 @@ class Transactions::CreateTransactionService < ApplicationService
     currency_service = CurrencyConverterService.new
     currency_service.convert(from: @from_currency, to: @to_currency)
   rescue => e
-    raise StandardError, "Erro ao obter taxa de conversão: #{e.message}"
+    raise StandardError, "Error fetching conversion rate: #{e.message}"
   end
 
   def calculate_converted_value(rate)
