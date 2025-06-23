@@ -7,6 +7,9 @@ class Transaction < ApplicationRecord
 
   validate :currencies_are_different
 
+  has_enumeration_for :from_currency, with: CurrencyEnumeration
+  has_enumeration_for :to_currency, with: CurrencyEnumeration
+
   private
 
   def currencies_are_different
