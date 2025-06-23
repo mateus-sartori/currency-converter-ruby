@@ -34,7 +34,7 @@ gem 'multi_xml'
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-# gem "rack-cors"
+gem "rack-cors"
 
 gem 'httparty'
 gem 'rswag'
@@ -46,6 +46,9 @@ gem 'will_paginate'
 # Authenticate setup
 gem 'devise'
 gem 'devise-jwt'
+
+gem 'tty-spinner', '~> 0.9.3'
+gem 'tty-prompt'
 
 group :development, :test do
   gem 'rubocop'
