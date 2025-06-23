@@ -3,7 +3,6 @@ class Transactions::IndexTransactionService < ApplicationService
     @user_id = user_id
     @page = page
     @per_page = per_page
-    super
   end
 
   def call
