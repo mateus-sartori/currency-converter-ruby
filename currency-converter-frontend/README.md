@@ -1,40 +1,44 @@
-# Currency Converter Frontend (currency-converter-frontend)
+## 🛠️ Passo a Passo para Build do Projeto Quasar
 
-A Quasar Project
+### Pré-requisitos
+1. Node.js instalado (versão 18 ou superior)
+2. Yarn ou npm instalado
+3. Quasar CLI instalado globalmente
 
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
+### Instalação
+1. Navegue até o diretório do projeto:
+   ```bash
+   cd currency-converter-frontend
+   ```
+2. Instale as dependências:
+   ```bash
+   yarn install
+   # ou
+   npm install
+   ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
+### Configuração
+1. Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+   ```env
+   VITE_API_BASE_URL=http://localhost:3000/api/v1/
+   ```
 
+### Executando o Projeto
+1. Para rodar o projeto em modo de desenvolvimento:
+   ```bash
+   quasar dev
+   ```
+2. O projeto estará disponível em:
+   ```bash
+   http://localhost:9000
+   ```
 
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+### Linting e Formatação
+1. Para verificar problemas de código:
+   ```bash
+   yarn lint
+   ```
+2. Para formatar o código automaticamente:
+   ```bash
+   yarn format
+   ```
