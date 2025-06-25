@@ -2,7 +2,7 @@ import { Cookies } from 'quasar';
 import createAxiosInstance from 'src/helpers/axios_instance';
 import { useUserStore } from 'src/stores/user-store';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+const API_BASE_URL = import.meta.env.VITE_WEB_BASE_URL || "http://localhost:3000";
 const web = createAxiosInstance(API_BASE_URL);
 
 interface User {

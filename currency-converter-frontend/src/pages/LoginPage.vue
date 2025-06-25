@@ -54,7 +54,7 @@ const onSubmit = async () => {
     await login(email.value, password.value);
     $q.notify({
       type: 'positive',
-      message: 'Login realizado com sucesso!'
+      message: 'Login successful!'
     });
     await router.push('/home');
   } catch (error) {
