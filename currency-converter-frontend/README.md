@@ -20,6 +20,7 @@
 ### Configuração
 1. Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
    ```env
+   VITE_WEB_BASE_URL=http://localhost:3000/
    VITE_API_BASE_URL=http://localhost:3000/api/v1/
    ```
 
