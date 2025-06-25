@@ -56,7 +56,7 @@ const onSubmit = async () => {
       type: 'positive',
       message: 'Login realizado com sucesso!'
     });
-    await router.push('/converter');
+    await router.push('/home');
   } catch (error) {
     $q.notify({
       type: 'negative',

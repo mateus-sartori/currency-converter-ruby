@@ -12,13 +12,9 @@ const routes: RouteRecordRaw[] = [
       //   component: () => import('pages/DashboardPage.vue')
       // },
       {
-        path: 'converter',
-        component: () => import('pages/CurrencyConverterPage.vue')
+        path: 'home',
+        component: () => import('pages/HomePage.vue')
       },
-      {
-        path: 'history',
-        component: () => import('pages/ConversionHistoryPage.vue')
-      }
     ]
   },
   {

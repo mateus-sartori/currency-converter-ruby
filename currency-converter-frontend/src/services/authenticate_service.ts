@@ -1,5 +1,6 @@
-import { Cookies, SessionStorage } from 'quasar';
+import { Cookies } from 'quasar';
 import createAxiosInstance from 'src/helpers/axios_instance';
+import { useUserStore } from 'src/stores/user-store';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 const web = createAxiosInstance(API_BASE_URL);
@@ -25,11 +26,16 @@ export const login = async (email: string, password: string): Promise<LoginRespo
     });
 
     const { user } = response.data;
-    const token = response.headers.authorization
+    const token = response.headers.authorization;
     
-    // Armazena o token e informações do usuário
+    // Armazena o token e atualiza o user store
     Cookies.set('bearerToken', token, { expires: '1d' });
-    SessionStorage.set('user', user);
+    const userStore = useUserStore();
+    userStore.setUser({
+      id: Number(user.id),
+      name: user.name,
+      email: user.email
+    });
 
     return { user, token };
   } catch {
@@ -41,14 +47,21 @@ export const logout = async (): Promise<void> => {
   try {
     await web.delete('/logout');
   } finally {
-    // Limpa os dados de sessão
+    // Limpa o token e o user store
     Cookies.remove('bearerToken');
-    SessionStorage.clear();
+    const userStore = useUserStore();
+    userStore.clearUser();
   }
 };
 
 export const getCurrentUser = (): User | null => {
-  return SessionStorage.getItem('user');
+  const userStore = useUserStore();
+  const userInfo = userStore.getUserInfo;
+  return userInfo.id ? {
+    id: String(userInfo.id),
+    name: userInfo.name || '',
+    email: userInfo.email || ''
+  } : null;
 };
 
 export const isLoggedIn = (): boolean => {

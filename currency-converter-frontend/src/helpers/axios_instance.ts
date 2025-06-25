@@ -1,10 +1,5 @@
 import axios from 'axios';
-import type { 
-  AxiosInstance, 
-  AxiosResponse, 
-  AxiosError, 
-  InternalAxiosRequestConfig 
-} from 'axios';
+import type { AxiosInstance, AxiosResponse, AxiosError, InternalAxiosRequestConfig } from 'axios';
 import { Cookies, SessionStorage } from 'quasar';
 
 /**
@@ -40,11 +35,11 @@ const createAxiosInstance = (baseURL: string): AxiosInstance => {
         SessionStorage.clear();
         window.location.href = '/login';
       }
-      
+
       // Tratamento de erros genéricos
-      const errorMessage = (error.response?.data as { message?: string })?.message || 'Erro na requisição';
+      const errorMessage = (error.response?.data as { message?: string })?.message;
       return Promise.reject(new Error(errorMessage));
-    }
+    },
   );
 
   return instance;
