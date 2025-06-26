@@ -47,6 +47,8 @@ API para conversão de moedas com autenticação JWT, desenvolvida em Ruby on Ra
     | --------------------- | ------------------------------- |
     | Entrar na bash       | `docker-compose exec web bash` |
     | Rodar migrações       | `bundle exec rails db:migrate` |
+    | Rodar testes         | `bundle exec rspec`            |
+    | Rodar teste específico| `bundle exec rspec caminho/do/arquivo_spec.rb` |
     | Acessar console Rails | `bundle exec rails c`         |
     | Parar containers      | `docker-compose down`           |
 
@@ -88,6 +90,15 @@ Entrar na bash do docker
 *   **Problemas no mock?**
 
     Verifique os logs da aplicação com `docker-compose logs app`.
+
+*   **Problemas nos testes?**
+    
+    Certifique-se que o banco de dados de teste está migrado:
+    ```bash
+    docker-compose exec web bash
+    RAILS_ENV=test bundle exec rails db:migrate
+    bundle exec rspec
+    ```
 
 📌 Exemplo de Uso - Transactions
 
