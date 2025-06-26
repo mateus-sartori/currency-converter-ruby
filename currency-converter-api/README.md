@@ -28,7 +28,7 @@ API para conversão de moedas com autenticação JWT, desenvolvida em Ruby on Ra
     Você pode gerar uma chave secreta forte usando o seguinte comando no terminal dentro do web bash:
 
     ```bash
-    rails secret
+    bundle exec rails secret
     ```
 
     Este comando irá gerar uma string aleatória que pode ser usada como `JWT_SECRET_KEY`.
