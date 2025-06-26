@@ -43,3 +43,12 @@
    ```bash
    yarn format
    ```
+
+
+   ### 📸 Preview da Aplicação
+
+   ![Preview da Página Principal](./exemplo.png)
+
+   *Tela principal mostrando:*
+   - Conversor de moedas
+   - Histórico de transações
