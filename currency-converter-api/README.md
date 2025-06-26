@@ -17,13 +17,13 @@ API para conversão de moedas com autenticação JWT, desenvolvida em Ruby on Ra
       POSTGRES_USER=postgres
       POSTGRES_PASSWORD=postgres
 
-      DEVISE_JWT_SECRET_KEY=sua_chave_api # Obtenha sua chave em: [URL da API de Câmbio]
-      CURRENCY_API_KEY=chave_super_secreta
+      DEVISE_JWT_SECRET_KEY=chave_super_secreta 
+      CURRENCY_API_KEY=sua_chave_api # Obtenha sua chave em: [https://api.currencyapi.com/v3]
     ```
 
     **Importante:**
-    *   Substitua `sua_chave_api` pela chave fornecida pelo serviço de API de câmbio [https://api.currencyapi.com/v3].
-    *   A `JWT_SECRET_KEY` deve ser uma string complexa e mantida em segredo, pois é usada para assinar os tokens JWT.
+    *   Substitua `chave_super_secreta` pela chave fornecida pelo serviço de API de câmbio [https://api.currencyapi.com/v3].
+    *   A `DEVISE_JWT_SECRET_KEY` deve ser uma string complexa e mantida em segredo, pois é usada para assinar os tokens JWT.
 
     Você pode gerar uma chave secreta forte usando o seguinte comando no terminal:
 
