@@ -132,7 +132,7 @@ Exemplo de requisição GET para listar transações:
 [
     {
         "transaction_id": 709,
-        "user_id": 466,
+        "user_id": 1,
         "from_currency": "USD",
         "to_currency": "BRL",
         "from_value": "1.0",
