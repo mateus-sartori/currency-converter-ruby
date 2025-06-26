@@ -25,7 +25,7 @@ API para conversão de moedas com autenticação JWT, desenvolvida em Ruby on Ra
     *   Substitua `sua_chave_api` pela chave fornecida pelo serviço de API de câmbio [https://api.currencyapi.com/v3].
     *   A `DEVISE_JWT_SECRET_KEY` deve ser uma string complexa e mantida em segredo, pois é usada para assinar os tokens JWT.
 
-    Você pode gerar uma chave secreta forte usando o seguinte comando no terminal:
+    Você pode gerar uma chave secreta forte usando o seguinte comando no terminal dentro do web bash:
 
     ```bash
     rails secret
