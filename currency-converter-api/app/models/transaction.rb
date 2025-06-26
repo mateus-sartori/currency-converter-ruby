@@ -1,4 +1,6 @@
 class Transaction < ApplicationRecord
+  belongs_to :user
+
   validates :user_id, presence: true, numericality: { only_integer: true }
   validates :from_currency, presence: true, length: { is: 3 }
   validates :to_currency, presence: true, length: { is: 3 }

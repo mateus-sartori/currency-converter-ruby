@@ -41,8 +41,17 @@ begin
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
+
+require_relative 'support/controller_macros'
+require 'devise'
+Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+  config.include FactoryBot::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  config.extend ControllerMacros, type: :controller
+
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
   ]
