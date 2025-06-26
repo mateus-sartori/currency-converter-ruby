@@ -89,10 +89,59 @@ Entrar na bash do docker
 
     Verifique os logs da aplicação com `docker-compose logs app`.
 
-📌 Exemplo de Uso
+📌 Exemplo de Uso - Transactions
 
-(Adicione aqui um exemplo de como usar a API, com um request e response de exemplo)
+1. Criar uma nova transação (É necessário estar autenticado):
+Exemplo de requisição POST para criar uma transação:
 
+**Endpoint:**  
+`POST http://localhost:3000/api/v1/transactions`
+
+**Headers obrigatórios:**  
+`Content-Type: application/json`  
+`Authorization: Bearer <seu_token_jwt>`
+
+**Payload de exemplo:**
+```json
+{
+    "transaction": {
+        "user_id": 1,
+        "from_currency": "USD",
+        "to_currency": "BRL",
+        "from_value": 100
+    }
+}
+```
+
+2. Listar transações do usuário (É necessário estar autenticado):
+Exemplo de requisição GET para listar transações:
+
+**Endpoint:**  
+`GET http://localhost:3000/api/v1/transactions?user_id=1`
+
+**Headers obrigatórios:**  
+`Content-Type: application/json`  
+`Authorization: Bearer <seu_token_jwt>`
+
+**Resposta de exemplo:**
+```json
+[]
+```
+
+```json
+[
+    {
+        "transaction_id": 709,
+        "user_id": 466,
+        "from_currency": "USD",
+        "to_currency": "BRL",
+        "from_value": "1.0",
+        "to_value": "5.5368006969",
+        "rate": "5.5368006969",
+        "timestamps": "2025-06-26T06:42:41.432Z"
+    }
+]
+```
 🔗 Links Úteis
 
 *   [Documentação da API](link_para_documentacao) (Manutenção)
